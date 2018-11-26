@@ -1,4 +1,4 @@
-# autobox
+# vehicle-detect
 Automobile recognition with computer vision and machine learning.
 
 # Vehicle Detection and Tracking using Computer Vision
