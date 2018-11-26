@@ -7,4 +7,4 @@ https://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to
 https://www.learnopencv.com/histogram-of-oriented-gradients/
 http://www.coldvision.io/2017/03/23/vehicle-detection-using-opencv-svm-classifier/
 https://junshengfu.github.io/vehicle-detection/
-https://ai.stanford.edu/~jkrause/cars/car_dataset.html
+https://github.com/udacity/self-driving-car/tree/master/annotations
