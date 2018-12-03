@@ -13,5 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\dataset">
+      <UniqueIdentifier>{65f1d1b9-f7c4-4275-8536-8937163551c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\dataset\car">
+      <UniqueIdentifier>{1488e651-06ca-4d3c-a095-9a743eddab25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\dataset\non-car">
+      <UniqueIdentifier>{f81746a9-4aa1-4c29-a491-d7911fdde589}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
