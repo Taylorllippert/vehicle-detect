@@ -16,3 +16,5 @@
 
 *.vs
 *.suo
+*.db
+VehicleDetect/.vs/VehicleDetect/v15/.suo
