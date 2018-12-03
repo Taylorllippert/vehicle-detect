@@ -53312,5 +53312,8 @@
     <Image Include="dataset\non-car\image3900.png">
       <Filter>Resource Files\dataset\non-car</Filter>
     </Image>
+    <Image Include="test3.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
