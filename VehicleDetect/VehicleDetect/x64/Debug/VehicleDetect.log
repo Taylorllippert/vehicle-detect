@@ -1,4 +1,7 @@
-﻿  main.cpp
-  source.cpp
-  Generating Code...
+﻿  source.cpp
+d:\dev\487\vehicle-detect\vehicledetect\vehicledetect\source.cpp(89): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'unsigned __int64'
+  d:\dev\487\vehicle-detect\vehicledetect\vehicledetect\source.cpp(89): note: consider using '%zd' in the format string
+d:\dev\487\vehicle-detect\vehicledetect\vehicledetect\source.cpp(111): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 2 has type 'unsigned __int64'
+  d:\dev\487\vehicle-detect\vehicledetect\vehicledetect\source.cpp(111): note: consider using '%zd' in the format string
+d:\dev\487\vehicle-detect\vehicledetect\vehicledetect\source.cpp(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   VehicleDetect.vcxproj -> D:\dev\487\vehicle-detect\VehicleDetect\x64\Debug\VehicleDetect.exe
