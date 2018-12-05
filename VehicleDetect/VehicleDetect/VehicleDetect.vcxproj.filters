@@ -27,9 +27,6 @@
     <ClCompile Include="source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="dataset\car\1.png">
@@ -53311,9 +53308,6 @@
     </Image>
     <Image Include="dataset\non-car\image3900.png">
       <Filter>Resource Files\dataset\non-car</Filter>
-    </Image>
-    <Image Include="test3.jpg">
-      <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
 </Project>
