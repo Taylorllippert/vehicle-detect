@@ -224,7 +224,7 @@ void detect_cars(const int &window) {
 
 	// define thresholds and movement of sliding window
 	// fine tuning by trial-and-error
-	patch.detectMultiScale(scene, boxes, 0.0302, Size(9, 9), Size(8, 8), 0.8, 2.0, false);
+	patch.detectMultiScale(scene, boxes, 0.0302, Size(9, 9), Size(5, 5), 0.6, 2.0, false);
 
 	// render results
 	draw_boxes(boxes, scene);
