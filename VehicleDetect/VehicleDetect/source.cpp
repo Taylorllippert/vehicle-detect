@@ -5,6 +5,7 @@
  * Program 4 Vehicle Detect
  * ---------------------------------------------------------------------------
  * PLACE TEST IMAGES IN WORKING DIRECTORY. EDIT (TEST_PATH).
+ * SVM ALREADY PROVIDED. DELETE dataset\svm.yaml TO RETRAIN.
  *
  * Vehicle Detect is a project that explores object recognition techniques to 
  * locate vehicles in images, such as those from traffic and dash cams. Drawing 
@@ -47,7 +48,7 @@ const string CAR_PATH      = "dataset\\car\\*.png";
 const string NONCAR_PATH   = "dataset\\non-car\\*.png";
 const string SVM_PATH      = "dataset\\svm.yml";
 //const string TEST_PATH     = "beatles.jpg";
-const string TEST_PATH     = "test.png";
+const string TEST_PATH     = "test.jpg";
 const int    TRN_IMG_SIZE  = 64;
 const int    PATCH_SIZE    = 8; 
 const int    CAR           =  1;
