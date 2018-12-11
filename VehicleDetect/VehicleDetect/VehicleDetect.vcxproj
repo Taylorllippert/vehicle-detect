@@ -17887,6 +17887,10 @@
     <Image Include="dataset\non-car\image998.png" />
     <Image Include="dataset\non-car\image999.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" />
+    <None Include="test.bat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

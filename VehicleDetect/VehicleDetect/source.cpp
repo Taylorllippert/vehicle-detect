@@ -43,18 +43,23 @@ using namespace std;
 using namespace cv;
 using namespace cv::ml;
 
-const string WINDOW_LABEL = "VEHICLE DETECT";
-const string CAR_PATH      = "dataset\\car\\*.png";
-const string NONCAR_PATH   = "dataset\\non-car\\*.png";
-const string SVM_PATH      = "dataset\\svm.yml";
-//const string TEST_PATH     = "beatles.jpg";
-const string TEST_PATH     = "test.jpg";
-const int    TRN_IMG_SIZE  = 64;
-const int    PATCH_SIZE    = 8; 
-const int    CAR           =  1;
-const int    NONCAR        = -1;
+const string WINDOW_LABEL    = "VEHICLE DETECT";
+const string CAR_PATH        = "dataset\\car\\*.png";
+const string NONCAR_PATH     = "dataset\\non-car\\*.png";
+const string SVM_PATH        = "dataset\\svm.yml";
+      string TEST_PATH       = "test.png";
+const int    TRN_IMG_SIZE    = 64;
+const int    PATCH_SIZE      = 8; 
+const int    CAR             =  1;
+const int    NONCAR          = -1;
+const float  HIT_THRESHOLD   = 0.0302;
+const float  WINDOW_SCALING  = 0.6;
+const float  FINAL_THRESHOLD = 2.0;
+const int    BOX_THICKNESS   = 2;
 const Scalar BOX_COLOR(0, 0, 255);
-const int    BOX_THICKNESS = 2;
+const Size   WINDOW_STRIDE(9, 9);
+const Size   WINDOW_PADDING(5, 5);
+
 
 bool on_disk(const string &path);
 void read_dataset(vector<Mat> &dataset, const string &path);
@@ -225,7 +230,7 @@ void detect_cars(const int &window) {
 
 	// define thresholds and movement of sliding window
 	// fine tuning by trial-and-error
-	patch.detectMultiScale(scene, boxes, 0.0302, Size(9, 9), Size(5, 5), 0.6, 2.0, false);
+	patch.detectMultiScale(scene, boxes, HIT_THRESHOLD, WINDOW_STRIDE, WINDOW_PADDING, WINDOW_SCALING, FINAL_THRESHOLD, false);
 
 	// render results
 	draw_boxes(boxes, scene);
@@ -254,6 +259,11 @@ void draw_boxes(const vector<Rect> &positions, Mat &scene) {
   *                 are rendered with bounding boxes.
   */
 int main(int argc, char* argv[]) {
+	// grab test
+	if (argc > 1) {
+		TEST_PATH = argv[1];
+	}
+
 	// welcome msg
 	std::cout << "+---------------------------------+" << endl;
 	std::cout << "|     Adam Ali, Taylor Lippert    |" << endl;
@@ -277,10 +287,16 @@ int main(int argc, char* argv[]) {
 
 	// check if test image is present
 	bool test_on_disk = on_disk(TEST_PATH);
-	if (svm_on_disk) std::cout << "| Test img at dataset\\test.png..Y |" << endl;
-	else            std::cout << "| Test img at dataset\\test.png..N |" << endl;
+	if (test_on_disk) std::cout << "| Test img at TEST_PATH.........Y |" << endl;
+	else            std::cout << "| Test img at TEST_PATH.........Y |" << endl;
 	
 	std::cout << "+---------------------------------+" << endl << endl;
+
+	// cannot proceed without a test image
+	if (!test_on_disk) {
+		std::cout << "TEST_PATH invalid. Nothing to test. Abort." << endl;
+		return -1;
+	}
 
 	// cannot proceed without data if training is needed
 	if (!svm_on_disk && (!cars_on_disk || !noncars_on_disk)) {

@@ -53310,4 +53310,12 @@
       <Filter>Resource Files\dataset\non-car</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="test.bat">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
